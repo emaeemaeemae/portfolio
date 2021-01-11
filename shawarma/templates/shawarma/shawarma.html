@@ -1,0 +1,379 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="{% static 'shawarma/css/shawarma.css' %}">
+</head>
+<body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+        ym(71009767, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71009767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <header class="header">
+        <div class="container header_wrap">
+            <picture>
+                <source media="(max-width: 767px)" srcset="{% static 'shawarma/img/logo-shawarma-mobile-1.png' %}">
+                <img src="{% static 'shawarma/img/logo-shawarma-1.png' %}" alt="Logo" class="header_logo-img">
+            </picture>
+            <nav class="header_nav">
+                <ul class="header_list">
+                    <li class="header_item">
+                        <a href="{% url 'index' %}" class="header_main_page"> На главную</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#catalog" class="header_link">Каталог</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#order" class="header_link">Заказать</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#customers" class="header_link">Клиенты</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#why" class="header_link">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header_hamburger hamburger">Открыть меню</button>
+        </div>
+    </header>
+
+    <section class="primary" id="primary">
+        <div class="container primary_container">
+            <p class="primary_text">Лучшая шаурма в&nbsp;городе.<br>
+                Доставим за&nbsp;15&nbsp;минут<br>
+                либо заказ за&nbsp;наш счет</p>
+            <div class="line-break"></div>
+            <button class="primary_button">
+                <a href="#order" class="primary_button-link">Проверить</a>              
+            </button>
+            <div class="primary_image-user">
+                <picture>
+                    <img src="{% static 'shawarma/img/person-shawarma-1.png' %}" alt="Моя фотография">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section class="why" id="why">
+        <div class="container why_container">
+            <h2 class="why_title">
+                Почему мы?
+            </h2>
+            <div class="why_description">
+                <div class="why_image">
+                    <picture>
+                        <img src="{% static 'shawarma/img/shawarma-1.png' %}" alt="Шавуха" class="why_image-img">
+                    </picture>
+                </div>
+                <div class="why_list">
+                    <div class="why_list-num">
+                        <div class="why_list-num-item">
+                            1
+                        </div>
+                        <div class="why_list-num-item">
+                            2 
+                        </div>
+                        <div class="why_list-num-item">
+                            3
+                        </div>
+                        <div class="why_list-num-item">
+                            4
+                        </div>
+                    </div>
+                    <div class="why_list-text">
+                        <div class="why_list-text-item">
+                            Только натуральные продукты
+                        </div>
+                        <div class="why_list-text-item">
+                            Более 1300 <br>
+                            клиентов каждый день
+                        </div>
+                        <div class="why_list-text-item">
+                            Скидка 100% <br>
+                            на первый заказ
+                        </div>
+                        <div class="why_list-text-item">
+                            Семь точек <br>
+                            по всему городу
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalog">
+        <div class="container catalog_container">
+            <div class="catalog_title title">
+                Каталог
+            </div>
+            <div class="catalog_list">
+                <div class="catalog_item">
+                    <div class="catalog_item-image">
+                        <picture>
+                            <img src="{% static 'shawarma/img/class-1.png' %}" alt="Classic" class="catalog_item-image-img">
+                        </picture>
+                    </div>
+                    <div class="catalog_item-name">
+                        Классическая
+                    </div>
+                    <div class="catalog_item-discription">
+                        Жаренное на гриле куриное филе с добавлением фирменных специй, спелые томаты, 
+                        свежие огурцы, хрустящий салат, маринованный красный лук, свежая зелень, маринованные 
+                        огурцы и все это завернуто в свежеиспеченный лаваш с двумя авторскими соусами
+                    </div>
+                    <div class="catalog_item-offer">
+                        <div class="catalog_item-offer-price">
+                            От 180
+                        </div>
+                        <button class="catalog_item-offer-button">
+                            Заказать
+                        </button>
+                    </div>
+                </div>
+                <div class="catalog_item">
+                    <div class="catalog_item-image">
+                        <picture>
+                            <img src="{% static 'shawarma/img/brand-1.png' %}" alt="Brand" class="catalog_item-image-img">
+                        </picture>
+                    </div>
+                    <div class="catalog_item-name">
+                        Фирменная
+                    </div>
+                    <div class="catalog_item-discription">
+                        Жаренное на гриле куриное филе с добавлением фирменных специй, 
+                        спелые томаты, свежие огурцы, хрустящий салат, маринованные огурцы с 
+                        обавлением острых перчиков халапеньо и картофеля пай и все это завернуто в 
+                        свежеиспеченный лаваш с двумя авторскими соусами
+                    </div>
+                    <div class="catalog_item-offer">
+                        <div class="catalog_item-offer-price">
+                            От 240
+                        </div>
+                        <button class="catalog_item-offer-button">
+                            Заказать
+                        </button>
+                    </div>
+                </div>
+                <div class="catalog_item">
+                    <div class="catalog_item-image">
+                        <picture>
+                            <img src="{% static 'shawarma/img/mexican-1.png' %}" alt="Mexican" class="catalog_item-image-img">
+                        </picture>
+                    </div>
+                    <div class="catalog_item-name">
+                        Мексиканская
+                    </div>
+                    <div class="catalog_item-discription">
+                        Жаренное на гриле куриное филе с добавлением фирменных специй, спелые томаты, 
+                        свежая зелень, сыр моцарелла, сочные ломтики бекона с добавлением острых перчиков 
+                        халапеньо и все это завернуто в свежеиспеченный лаваш с двумя авторскими соусами   
+                    </div>
+                    <div class="catalog_item-offer">
+                        <div class="catalog_item-offer-price">
+                            От 210
+                        </div>
+                        <button class="catalog_item-offer-button">
+                            Заказать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="order" id="order">
+        <div class="container order_container">
+            <form method="post" class="order_form">
+                {% csrf_token %}
+                <div class="order_title">
+                    Оставьте заявку
+                </div>
+                <div class="order_name">
+                    <label for="order_name-input-input" class="order_name-name">
+                        Имя
+                    </label>
+                    <div class="order_name-input">
+                        {{ form.name }}
+<!--                        <input id="order_name-input-input" type="text" >-->
+                    </div>
+                </div>
+                <div class="order_phone">
+                    <label for="order_phone-input-input" class="order_phone-name">
+                        Телефон
+                    </label>
+                    <div class="order_phone-input">
+                        {{ form.phone }}
+<!--                        <input id="order_phone-input-input" type="text" >-->
+                    </div>
+                </div>
+                <div class="order_button">
+                    <div class="order_button-agreement">
+                        *Нажимая кнопку, я даю свое согласие на
+                        <a href="{% url 'privacy' %}" target="_blank" class="privacy_link" style="color: #FFFFFF">обработку персональных данных</a>
+                    </div>
+                    <button class="order_button-button button" type="submit">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        </div> 
+    </section>
+    
+    <section class="customers" id="customers">
+        <div class="container customers_container">
+            <div class="customers_head">
+                <div class="customers_title title">
+                    Наши клиенты
+                </div>
+                <div class="customers_arrows">
+                    <div class="customers_arrows-prev" id="desktop-left-arrow">
+                    </div>
+                    <div class="customers_arrows-next" id="desktop-right-arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="customers_slider-container">
+                <div class="customers_arrows-prev" id="desktop-left-arrow-mobile">
+                </div>
+                <div class="customers_main-slider">
+                    <img src="{% static 'shawarma/img/Photo-1.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-2.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-3.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-4.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-1.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-2.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-3.png' %}" alt="Our customer" class="customer_img">
+                    <img src="{% static 'shawarma/img/Photo-4.png' %}" alt="Our customer" class="customer_img">
+                </div>
+                <div class="customers_arrows-next" id="desktop-right-arrow-mobile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map">
+        <div class="container map_container">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A49066105e2442e2bbb37b86b1e96c8515a038a3d371644df689b3d39b6a88336&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+    </section>
+
+    <footer class="footer" id="about">
+        <div class="container footer_wrap">
+            <div class="footer_logo">
+                <picture>
+                    <img src="{% static 'shawarma/img/logo-shawarma-1.png' %}" alt="Logo" class="footer_logo-img">
+                </picture>
+                <p class="footer_years">© 2009-2020</p>
+                <p class="footer_politics">
+                    Политика конфиденциальности<br />
+                        Копирование материалов запрещено
+                </p>
+            </div>
+            <nav class="footer_nav">
+                <ul class="footer_list">
+                    <li class="footer_item">
+                        <a href="#catalog" class="footer_link">Каталог</a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="#order" class="footer_link">Заказать</a>
+                    </li>
+                    <div class="line-break"></div>
+                    <li class="footer_item">
+                        <a href="#customers" class="footer_link">Клиенты</a>
+                    </li>
+                    <li class="footer_item">
+                        <a href="#why" class="footer_link">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="line-break"></div>
+            <div class="footer_socNetworks">
+                <a href="https://vk.com" class="footer_vk-logo"></a>
+                <a href="https://instagram.com" class="footer_inst-logo"></a>           
+            </div>
+            <div class="footer_contacts">
+                <p class="footer_offlineAdress">
+                    <nobr>8 (999) 444-33-22</nobr><br />
+                        г.&nbsp;Челябинск, ул.&nbsp;Ленина, д.11
+                </p>
+                <p class="footer_onlineAdress">
+                    shawarma@yandex.ru
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <form method="post" class="modal_form">
+            {% csrf_token %}
+            <button class="modal_close" type="button">
+            </button>
+            <div class="modal_title">
+                Оставьте заявку. Наш менеджер позвонит Вам 
+                в течение 5 минут
+            </div>
+            <div class="modal_type">
+                <label for="modal_type-input-input" class="modal_type-name">
+                    Название
+                </label>
+                <div class="modal_type-input">
+                    {{ form.type }}
+<!--                    <input id="modal_type-input-input" type="text" value="" class="modal_type-input-input">-->
+                </div>
+            </div>
+            <div class="modal_name">
+                <label for="modal_name-input-input" class="modal_name-name">
+                    Имя
+                </label>
+                <div class="modal_name-input">
+                    {{ form.name }}
+<!--                    <input id="modal_name-input-input" type="text" value="" class="modal_name-input-input" placeholder="Шаурмен">-->
+                </div>
+            </div>
+            <div class="modal_phone">
+                <label for="modal_phone-input-input" class="modal_phone-name">
+                    Телефон
+                </label>
+                <div class="modal_phone-input">
+                    {{ form.phone }}
+<!--                    <input id="modal_phone-input-input" value="" class="modal_phone-input-input" placeholder="+7-912-123-45-67" type="phone">-->
+                </div>
+            </div>
+            <div class="modal_button">
+                <div class="modal_button-agreement">
+                    *Нажимая кнопку, я даю свое согласие на
+                    <a href="{% url 'privacy' %}" target="_blank" class="privacy_link">обработку персональных данных</a>
+                </div>
+                <button class="modal_button-button button" type="submit">
+                    Отправить
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script src="{% static 'shawarma/js/shawarma.js' %}"></script>
+</body>
+</html>

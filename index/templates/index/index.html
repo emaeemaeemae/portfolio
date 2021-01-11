@@ -1,0 +1,240 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="{% static 'index/css/main.css' %}">
+</head>
+<body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+        ym(71009767, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/71009767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <header class="header">
+        <div class="container header_container">
+            <img src="{% static 'index/img/logo.png' %}" alt="Логотип портфолио" class="header_logo-img">
+            <nav class="header_nav">
+                <ul class="header_list">
+                    <li class="header_item">
+                        <a href="#primary" class="header_link">Домой</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#about" class="header_link">Обо мне</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#skills" class="header_link">Навыки</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#portfolio" class="header_link">Портфолио</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#" class="header_link">Стройка</a>
+                    </li>
+                    <li class="header_item">
+                        <a href="#footer" class="header_link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header_hamburger hamburger">Открыть меню</button>
+        </div>
+    </header>
+
+    <section class="primary" id="primary">
+        <div class="container">
+            <div class="primary_info">
+                <h1 class="primary_title">Мысин Игорь</h1>
+                <p class="primary_text">Frontend / Python developer 28 лет, Санкт-Петербург</p>
+            </div>
+            <div class="primary_image-user">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="{% static 'index/img/photo-mobile-1.jpg' %}">
+                    <img src="{% static 'index/img/photo-desk-1.jpg' %}" alt="My photo">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="title">Обо мне</h2>
+            <div class="about_info">
+                <p>Привет, меня зовут Игорь. Я&nbsp;Frontend разработчик из&nbsp;Санкт&nbsp;-&nbsp;Петербурга. Мне интересна <nobr>веб-разработка</nobr> и&nbsp;все что этим связано.</p>
+                <p>Я&nbsp;окончил&nbsp;несколько онлайн курсов, в том числе курс &laquo;Frontend&nbsp;Dev&raquo; в&nbsp;Napoleon IT&nbsp;School.</p>
+                <p>Планирую и&nbsp;дальше развиваться в&nbsp;этой сфере. Рассмотрю любое коммерческое предложение о&nbsp;сотрудничестве.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container skills_container">
+            <h2 class="title">Навыки</h2>
+            <h3 class="technology">используемые технологии:</h3>
+            <div class="tech_container">
+                <div class="tech_item">
+                    <div class="tech_logo">
+                        <picture>
+                            <img src="{% static 'index/img/html-logo.png' %}" alt="html-logo">
+                        </picture>
+                    </div>
+                    <h4 class="tech_name">
+                        HTML
+                    </h4>
+                    <div class="tech_level">
+                        &#9733 &#9733 &#9733 &#9734 &#9734
+                    </div>
+                </div>
+                <div class="tech_item">
+                    <div class="tech_logo">
+                        <picture>
+                            <img src="{% static 'index/img/css-logo.png' %}" alt="css-logo">
+                        </picture>
+                    </div>
+                    <h4 class="tech_name">
+                        CSS
+                    </h4>
+                    <div class="tech_level">
+                        &#9733 &#9733 &#9733 &#9734 &#9734
+                    </div>              
+                </div>
+                <div class="tech_item">
+                    <div class="tech_logo">
+                        <picture>
+                            <img src="{% static 'index/img/javascript-logo.png' %}" alt=js-logo>
+                        </picture>
+                    </div>
+                    <h4 class="tech_name">
+                        JavaScript
+                    </h4>
+                    <div class="tech_level">
+                        &#9733 &#9733 &#9733 &#9734 &#9734
+                    </div>
+                    
+                </div>
+                <div class="tech_item">
+                    <div class="tech_logo">
+                        <picture>
+                            <img src="{% static 'index/img/python-logo.png' %}" alt="python-logo">
+                        </picture>
+                    </div>
+                    <h4 class="tech_name">
+                        Python
+                    </h4>
+                    <div class="tech_level">
+                        &#9733 &#9733 &#9733 &#9734 &#9734
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container portfolio_container">
+            <h2 class="title">Портфолио</h2>
+            <div class="portfolio_item">
+                <a href="{% url 'shawarma' %}" class="portfolio_shawarma">
+                    <img src="{% static 'index/img/portfolio_shawarma.png' %}" alt="Сайт с шаурмой" class="portfolio_item-img">
+                </a>
+                <p class="portfolio_item-label">
+                    Сайт шаурмы<br>
+                    <span class="portfolio_item-click">(для просмотра нажмите на картинку)</span>
+                </p>
+            </div>
+            <div class="portfolio_item">
+                <a href="{% url 'mebelchel' %}" class="portfolio_shawarma">
+                    <img src="{% static 'index/img/portfolio_mebelchel.png' %}" alt="Сайт с шаурмой" class="portfolio_item-img">
+                </a>
+                <p class="portfolio_item-label">
+                    Сайт мебельного магазина<br>
+                    <span class="portfolio_item-click">(для просмотра нажмите на картинку)</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="container footer_container">
+            <h2 class="title">Контакты</h2>
+            <div class="more">
+                Хотите связаться со мной <br>
+                или узнать больше?
+            </div>
+            <button class="button-write" title="Заказать обратный звонок">
+                Написать мне
+            </button>
+            <div class="soc_networks">
+                <a href="tg://resolve?domain=igormysin" class="footer_logo footer_telegram-logo" title="Написать в Telegram"></a>
+                <a href="whatsapp://send/?phone=+79617931019" class="footer_logo footer_whatsapp-logo" target="_blank" title="Написать в Whatsapp"></a>
+                <a href="https://hh.ru/resume/2aa3128fff0870814d0039ed1f5a4534583238" class="footer_logo footer_hh-logo" target="_blank" title="Резюме на hh.ru"></a>
+                <a href="https://github.com/emaeemaeemae" class="footer_logo footer_github-logo" target="_blank" title="Репозиторий Github"></a>
+            </div>
+            <div class="soc_networks-label">
+                Мои аккаунты в Telegram, Whatsapp <br>
+                HH, Github
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <form method="post" class="modal_form">
+            {% csrf_token %}
+            <button class="modal_close" type="button">
+            </button>
+            <div class="modal_title">
+                Оставьте заявку! <br>
+                Я перезвоню вам в ближайшее время
+            </div>
+            <div class="modal_name">
+                <label for="modal_name-input-input" class="modal_name-name">
+                    Имя
+                </label>
+                <div class="modal_name-input">
+                    {{ form.name }}
+<!--                    <input id="modal_name-input-input" type="text" value="" class="modal_name-input-input" placeholder="Александр">-->
+                </div>
+            </div>
+            <div class="modal_phone">
+                <label for="modal_phone-input-input" class="modal_phone-name">
+                    Телефон
+                </label>
+                <div class="modal_phone-input">
+                    {{ form.phone }}
+<!--                    <input id="modal_phone-input-input" value="" class="modal_phone-input-input" placeholder="+7-912-123-45-67" type="phone">-->
+                </div>
+            </div>
+            <div class="modal_button">
+                <div class="modal_button-agreement">
+                    *Нажимая кнопку, я даю свое согласие на
+                    <a href="{% url 'privacy' %}" target="_blank" class="privacy_link">обработку персональных данных</a>
+
+                </div>
+                <button class="modal_button-button button" type="submit">
+                    Отправить
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="{% static 'index/js/script.js' %}"></script>
+</body>
+</html>
