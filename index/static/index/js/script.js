@@ -83,3 +83,17 @@ writeButton.addEventListener('click', (clickButton) => {
     modalWindow.classList.add('modal--active');
     document.querySelector('.modal_name-input-input').focus();
 })
+
+$('#test').submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+        url: '/',
+        type: 'POST',
+        dataType: 'json',
+        data: $('#test').serialize(),
+        success: function (data) {
+            $('.alert.alert-success').addClass('active')
+            $('.modal_title').css('margin-top', '50px')
+        }
+    });
+});
