@@ -84,13 +84,13 @@ writeButton.addEventListener('click', (clickButton) => {
     document.querySelector('.modal_name-input-input').focus();
 })
 
-$('#test').submit(function(event) {
+$('.modal_form').submit(function(event) {
     event.preventDefault();
     $.ajax({
         url: '/',
         type: 'POST',
         dataType: 'json',
-        data: $('#test').serialize(),
+        data: $('.modal_form').serialize(),
         success: function (data) {
             $('.alert.alert-success').addClass('active')
             $('.modal_title').css('margin-top', '50px')
