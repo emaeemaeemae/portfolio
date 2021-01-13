@@ -193,11 +193,15 @@
     </footer>
 
     <div class="modal">
+        <div class="success">
+            <button class="modal_close" type="button">
+            </button>
+            <div class="alert alert-success">
+                    Заявка успешно отправлена!
+            </div>
+        </div>
         <form method="post" class="modal_form">
             {% csrf_token %}
-            <div class="alert alert-success">
-                Заявка успешно отправлена!
-            </div>
             <button class="modal_close" type="button">
             </button>
             <div class="modal_title">

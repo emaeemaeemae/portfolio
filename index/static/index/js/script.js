@@ -65,21 +65,25 @@ $('#vk_group_parser-slider').slick({
 
 let writeButton = document.querySelector('.button-write'); // кнопка написать
 let modalWindow = document.querySelector('.modal');
-let closeButton = document.querySelector('.modal_close');
+let closeButtons = document.querySelectorAll('.modal_close');
 
 modalWindow.addEventListener('click', () => {
     modalWindow.classList.remove('modal--active');  // закрытие модального окна при клике вне формы
 })
 
-closeButton.addEventListener('click', () => {
-    modalWindow.classList.remove('modal--active');  // закрытие модального окна при клике на X
-})
+for (let closeButton of closeButtons) {
+    closeButton.addEventListener('click', () => {
+        modalWindow.classList.remove('modal--active');  // закрытие модального окна при клике на X
+    })
 
-$(".modal_form").click(function(event) { // приостанавливает закрытие модального окна при кликах на форму
-    event.stopPropagation();
-});
+    $(".modal_form").click(function (event) { // приостанавливает закрытие модального окна при кликах на форму
+        event.stopPropagation();
+    });
+}
 
 writeButton.addEventListener('click', (clickButton) => {
+    $('.success').removeClass('success_active');
+    $('.modal_form').removeClass('modal_hidden');
     modalWindow.classList.add('modal--active');
     document.querySelector('.modal_name-input-input').focus();
 })
@@ -92,8 +96,11 @@ $('.modal_form').submit(function(event) {
         dataType: 'json',
         data: $('.modal_form').serialize(),
         success: function (data) {
-            $('.alert.alert-success').addClass('active')
-            $('.modal_title').css('margin-top', '50px')
+            $('.alert.alert-success').addClass('active');
+            $('.modal_title').css('margin-top', '50px');
+            $('.success').addClass('success_active');
+            $('.modal_form').addClass('modal_hidden');
+            $('.modal_form')[0].reset();
         }
     });
 });
