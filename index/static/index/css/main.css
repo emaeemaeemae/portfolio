@@ -756,6 +756,8 @@ button:focus {
     .modal_button-button {
         height: 35px;
         margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 24px;
     }
 
     .modal_button-agreement {

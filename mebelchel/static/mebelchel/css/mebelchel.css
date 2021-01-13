@@ -132,7 +132,7 @@ button:hover:not(.hamburger) {
 
 .header_logo-img {
     width: 141px;
-    height: 57;
+    height: 57px;
     margin: 20px;
 }
 
@@ -142,7 +142,7 @@ button:hover:not(.hamburger) {
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
-    margin: 20px 85px 20px 0px;
+    margin: 20px 85px 20px 0;
 }
 
 .header_title.title::before{
@@ -675,7 +675,7 @@ button:hover:not(.hamburger) {
     display: none;
     width: 100%;
     height: 100%;
-    background-color: rgb(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
 
 }
 
@@ -1752,6 +1752,8 @@ button:hover:not(.hamburger) {
     .modal_button-button {
         height: 35px;
         margin-bottom: 10px;
+        font-size: 22px;
+        line-height: 24px;
     }
 
     .modal_button-agreement {
