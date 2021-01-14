@@ -92,7 +92,8 @@ button:hover:not(.hamburger) {
     position: fixed; 
     background-color: #ffffff;
     top: 0;
-    left: 0;
+    /*стандартное положение для экрана 1920х1080*/
+    left: 351.5px;
     width: 1200px;
     z-index: 3;
 }

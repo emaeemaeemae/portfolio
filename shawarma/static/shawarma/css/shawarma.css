@@ -347,7 +347,7 @@ button:hover:not(.hamburger) {
     margin-right: 20px;
 }
 
-.order_name-input input, .order_phone-input input {
+.order_name-input-input, .order_phone-input-input {
     font-size: 30px;
     line-height: 34px;
     color: #FFFFFF;
@@ -359,7 +359,7 @@ button:hover:not(.hamburger) {
     padding: 0;
 }
 
-.order_name-input input:focus, .order_phone-input input:focus {
+.order_name-input-input:focus, .order_phone-input-input:focus {
     border-bottom: 2px solid #E63E00;
 }
 
@@ -562,7 +562,7 @@ button:hover:not(.hamburger) {
 
 }
 
-.modal--active {
+.modal-active {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -578,6 +578,10 @@ button:hover:not(.hamburger) {
     border: 1px white solid;
     background-color: #fff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal_form.modal_hidden {
+    display: none;
 }
 
 .modal_title {
@@ -649,6 +653,50 @@ button:hover:not(.hamburger) {
 
 .modal_close{
     display: none;
+}
+
+.success {
+    width: 850px;
+    height: 550px;
+    display: none;
+    border: 1px white solid;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.success.success_active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert.alert-success {
+    width: 90%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 44px;
+    line-height: 48px;
+}
+
+.alert.alert-success.active {
+    display: block;
+}
+
+.success {
+    width: 768px;
 }
 /* desktop */
 
@@ -945,7 +993,7 @@ button:hover:not(.hamburger) {
         font-weight: 400;
     }
 
-    .header_list--active {
+    .header_list-active {
         transform: translateY(0);
     }
 
@@ -998,12 +1046,12 @@ button:hover:not(.hamburger) {
         transition: all ease-in 0.4s;
     }
 
-    .hamburger--active::before {
+    .hamburger-active::before {
         top: 25px;
         transform: rotate(45deg);
         box-shadow: none;
     }
-    .hamburger--active::after {
+    .hamburger-active::after {
         top: 25px;
         transform: rotate(-45deg);
         box-shadow: none;
@@ -1015,7 +1063,7 @@ button:hover:not(.hamburger) {
                     0 14px 0 0 #E63E00;
     }
 
-    .hamburger--active:hover:before, .hamburger--active:hover:after {
+    .hamburger-active:hover:before, .hamburger-active:hover:after {
         background-color: #E63E00;
         box-shadow: none;
     }
@@ -1200,7 +1248,7 @@ button:hover:not(.hamburger) {
         line-height: 21px;
     }
 
-    .order_name-input input, .order_phone-input input {
+    .order_name-input-input, .order_phone-input-input {
         font-size: 18px;
         line-height: 21px;
         width: 190px;
@@ -1487,6 +1535,12 @@ button:hover:not(.hamburger) {
     .modal_button-agreement {
         margin: 0 auto;
         text-align: center;
+    }
+
+    .success {
+        position: relative;
+        width: 320px;
+        height: 100%;
     }
 
 }

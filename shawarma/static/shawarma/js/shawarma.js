@@ -29,8 +29,8 @@ let mainHamburger = document.querySelector(".hamburger");
 
 
 mainHamburger.addEventListener('click', () => {
-    mainMenu.classList.toggle("header_list--active");
-    mainHamburger.classList.toggle("hamburger--active");
+    mainMenu.classList.toggle("header_list-active");
+    mainHamburger.classList.toggle("hamburger-active");
 });
 
 // Плавный скролл
@@ -46,8 +46,8 @@ for (let menuLink of menuLinks) {
             top: coordinates - 100,
             behavior: "smooth"
         });
-        mainMenu.classList.remove("header_list--active");
-        mainHamburger.classList.remove("hamburger--active");
+        mainMenu.classList.remove("header_list-active");
+        mainHamburger.classList.remove("hamburger-active");
     })
     
 }
@@ -56,15 +56,17 @@ for (let menuLink of menuLinks) {
 
 let orderButtons = document.querySelectorAll('.catalog_item-offer-button'); // кнопки заказа
 let modalWindow = document.querySelector('.modal');
+let modalForm = $('.modal_form'); // форма в модальном окне
+let callForm = $('.order_form'); // форма на странице
 let orderType = document.querySelector('.modal_type-input-input'); // окно ввода вида шаурмы
 let closeButton = document.querySelector('.modal_close');
 
 modalWindow.addEventListener('click', () => {
-    modalWindow.classList.remove('modal--active');  // закрытие модального окна при клике вне формы
+    modalWindow.classList.remove('modal-active');  // закрытие модального окна при клике вне формы
 })
 
 closeButton.addEventListener('click', () => {
-    modalWindow.classList.remove('modal--active');  // закрытие модального окна при клике на X
+    modalWindow.classList.remove('modal-active');  // закрытие модального окна при клике на X
 })
 
 $(".modal_form").click(function(event) { // приостанавливает закрытие модального окна при кликах на форму
@@ -73,14 +75,47 @@ $(".modal_form").click(function(event) { // приостанавливает з�
 
 for (let orderButton of orderButtons) {
         orderButton.addEventListener('click', (clickButton) => {
-        modalWindow.classList.add('modal--active');
-        // поиск названия выбранной шаурмы через родительскую карточку
-        let item = clickButton.target.closest('.catalog_item'); // карточка шаурмы 
-        let name = item.querySelector('.catalog_item-name').innerHTML.toString(); // название
-        orderType.value = name.trim();
-        document.querySelector('.modal_name-input-input').focus();
-        // $(orderType).val(name.innerText);
+            $('.success').removeClass('success_active');
+            modalForm.removeClass('modal_hidden');
+            modalWindow.classList.add('modal-active');
+            // поиск названия выбранной шаурмы через родительскую карточку
+            let item = clickButton.target.closest('.catalog_item'); // карточка шаурмы 
+            let name = item.querySelector('.catalog_item-name').innerHTML.toString(); // название
+            orderType.value = name.trim();
+            document.querySelector('.modal_name-input-input').focus();
+            // $(orderType).val(name.innerText);
     })
 }
+
+modalForm.submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+        url: '/shawarma/',
+        type: 'POST',
+        data: modalForm.serialize(),
+        success: function () {
+            $('.success').addClass('success_active'); // вывод сообщения об отправке
+            modalForm.addClass('modal_hidden'); // скрытие формы
+            modalForm[0].reset();
+            callForm[0].reset();
+        }
+    });
+});
+
+callForm.submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+        url: '/shawarma/',
+        type: 'POST',
+        data: callForm.serialize(),
+        success: function () {
+            modalWindow.classList.add('modal-active'); // вызов модального окна
+            $('.success').addClass('success_active'); // вывод сообщения об отправке
+            modalForm.addClass('modal_hidden'); // скрытие формы
+            modalForm[0].reset();
+            callForm[0].reset();
+        }
+    });
+});
 
 

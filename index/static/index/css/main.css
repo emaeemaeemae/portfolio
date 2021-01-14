@@ -448,10 +448,6 @@ button:focus {
     transform: scale(1.05);
 }
 
-.modal_name-input-input:focus, .modal_phone-input-input:focus {
-    border-bottom: 2px solid #E63E00;
-}
-
 .modal_close{
     display: none;
 }
@@ -657,13 +653,6 @@ button:focus {
         height: 3px;
         background-color: #000000;
     }
-
-    .modal_close:hover:before,
-    .modal_close:hover:after {
-        background-color: #E63E00;
-        ;
-    }
-
 
     .modal_close::before {
         top: 12.5px;

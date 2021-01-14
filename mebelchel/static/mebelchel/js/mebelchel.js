@@ -71,7 +71,7 @@ let orderButtons = document.querySelectorAll('.catalog_item-offer-button'); // �
 let modalWindow = document.querySelector('.modal');
 let modalForm = $('.modal_form'); // форма в модальном окне
 let callForm = $('.order_form'); // форма на странице
-let orderType = document.querySelector('.modal_type-input-input'); // окно ввода вида шаурмы
+let orderType = document.querySelector('.modal_type-input-input'); // окно ввода вида мебели
 let closeButton = document.querySelector('.modal_close');
 
 modalWindow.addEventListener('click', () => {
