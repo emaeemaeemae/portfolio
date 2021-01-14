@@ -10,6 +10,7 @@ window.onresize = function() {
 }
 
 // Инициализация слайдера
+// noinspection JSUnresolvedFunction
 $('.customers_main-slider').slick({
     slidesToShow: 2,
     slidesToScroll: 1,

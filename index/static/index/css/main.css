@@ -108,11 +108,10 @@ button:focus {
 
 .primary_title {
     max-width: 191px;
-    margin: 0;
+    margin: 0 100px 0 0;
     font-family: "ubuntubold", serif;
     font-size: 48px;
     line-height: 55px;
-    margin-right: 100px;
 }
 
 .primary_text {
@@ -140,8 +139,7 @@ button:focus {
     justify-content: center;
     align-items: center;
     padding-top: 45px;
-    margin: 0;
-    margin-bottom: 50px;
+    margin: 0 0 50px 0;
     font-family: "ubuntubold", serif;
     font-size: 48px;
     line-height: 56px;
@@ -371,7 +369,7 @@ button:focus {
     align-items: center;
     border: 1px white solid;
     background-color: #f3f3f3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .modal_form.modal_hidden {
@@ -458,7 +456,7 @@ button:focus {
     display: none;
     border: 1px white solid;
     background-color: #f3f3f3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .success.success_active {
@@ -528,7 +526,7 @@ button:focus {
 
     .header_link {
         display: block;
-        padding: 25px 0px;
+        padding: 25px 0;
         font-size: 34px;
         line-height: 39px;
     }

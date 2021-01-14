@@ -1,6 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
+<!--suppress JSUnresolvedLibraryURL -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +12,8 @@
     <link rel="stylesheet" href="{% static 'index/css/main.css' %}">
 </head>
 <body>
-    <!-- Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter, JSUnresolvedFunction, CommaExpressionJS -->
+    <!--suppress JSValidateTypes, JSUnresolvedFunction, CommaExpressionJS -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
         m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
@@ -44,7 +46,7 @@
                     <li class="header_item">
                         <a href="#portfolio" class="header_link">Портфолио</a>
                     </li>
-                    <li class="header_item">
+                    <li class="header_item" style="display: none">
                         <a href="#" class="header_link">Стройка</a>
                     </li>
                     <li class="header_item">
@@ -75,9 +77,11 @@
         <div class="container">
             <h2 class="title">Обо мне</h2>
             <div class="about_info">
-                <p>Привет, меня зовут Игорь. Я&nbsp;Frontend разработчик из&nbsp;Санкт&nbsp;-&nbsp;Петербурга. Мне интересна <nobr>веб-разработка</nobr> и&nbsp;все что этим связано.</p>
+                <p>Привет, меня зовут Игорь. Я&nbsp;Frontend разработчик из&nbsp;Санкт&nbsp;-&nbsp;Петербурга.
+                    Мне интересна веб-разработка и&nbsp;все что этим связано.</p>
                 <p>Я&nbsp;окончил&nbsp;несколько онлайн курсов, в том числе курс &laquo;Frontend&nbsp;Dev&raquo; в&nbsp;Napoleon IT&nbsp;School.</p>
-                <p>Планирую и&nbsp;дальше развиваться в&nbsp;этой сфере. Рассмотрю любое коммерческое предложение о&nbsp;сотрудничестве.</p>
+                <p>Планирую и&nbsp;дальше развиваться в&nbsp;этой сфере. Рассмотрю любое коммерческое предложение
+                    о сотрудничестве.</p>
             </div>
         </div>
     </section>

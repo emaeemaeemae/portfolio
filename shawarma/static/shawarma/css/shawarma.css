@@ -1,3 +1,4 @@
+/*noinspection ALL*/
 @font-face {
     font-family: "ubuntubold";
     src: url("../../../static/index/fonts/ubuntubold.woff") format("woff"),
@@ -7,6 +8,7 @@
     font-style: normal;
 }
 
+/*noinspection ALL*/
 @font-face {
     font-family: "ubuntumedium";
     src: url("../../../static/index/fonts/ubuntumedium.woff") format("woff"),
@@ -61,7 +63,7 @@ button {
     font-size: 24px;
     line-height: 28px;
     border-radius: 3px;
-    border: 0px #E63E00;
+    border: 0 #E63E00;
 }
 
 button:hover:not(.hamburger) {
@@ -260,12 +262,15 @@ button:hover:not(.hamburger) {
 
 .title::before{
     content: "";
-    top: 0px;
-    left: 0px;
+    left: 0;
     margin-right: 20px;
     width: 5px;
     height: 50px;
     background-color:#E63E00;   
+}
+
+.title::before{
+    top: 0;
 }
 
 .catalog_list {
@@ -294,7 +299,7 @@ button:hover:not(.hamburger) {
     margin-bottom: 14px;
 }
 
-.catalog_item-discription {
+.catalog_item-description {
     text-align-last: left;
     font-weight: 400;
     font-size: 18px;
@@ -389,7 +394,7 @@ button:hover:not(.hamburger) {
 
 .customers_title {
     width: 325px;
-    margin-right: 0px;
+    margin-right: 0;
     margin-bottom: 0;
 }
 
@@ -468,7 +473,6 @@ button:hover:not(.hamburger) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: auto;
 }
 
 .footer_logo {
@@ -537,7 +541,7 @@ button:hover:not(.hamburger) {
     background-image: url("../img/inst-active.png");
 }
 
-.footer_offlineAdress {
+.footer_offlineAddress {
     font-weight: 400;
     margin: 80px auto 30px auto;
 }
@@ -577,7 +581,7 @@ button:hover:not(.hamburger) {
     align-items: center;
     border: 1px white solid;
     background-color: #fff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .modal_form.modal_hidden {
@@ -777,7 +781,7 @@ button:hover:not(.hamburger) {
     }
     
     .why_list-num {
-        margin-top: 0px;
+        margin-top: 0;
     }
     
     .why_list-num-item:first-child {
@@ -837,7 +841,7 @@ button:hover:not(.hamburger) {
         margin-bottom: 20px;
     }
     
-    .catalog_item-discription {
+    .catalog_item-description {
         font-size: 16px;
         line-height: 18px;
         margin-bottom: 40px;
@@ -946,11 +950,11 @@ button:hover:not(.hamburger) {
         text-align: center;
     }
 
-    .footer_offlineAdress {
+    .footer_offlineAddress {
         margin-top: 0;
     }
 
-    .footer_onlineAdress {
+    .footer_onlineAddress {
         margin-bottom: 75px;
     }
 
@@ -1119,7 +1123,7 @@ button:hover:not(.hamburger) {
     }
     
     .why_list-num {
-        margin-top: 0px;
+        margin-top: 0;
         margin-right: 40px;
     }
     
@@ -1191,7 +1195,7 @@ button:hover:not(.hamburger) {
         margin-bottom: 30.33px;
     }
 
-    .catalog_item-discription {
+    .catalog_item-description {
         margin-bottom: 10px;
     }
 
@@ -1413,7 +1417,7 @@ button:hover:not(.hamburger) {
         margin: 20px auto 50px 35px;
     }
     
-    .footer_offlineAdress {
+    .footer_offlineAddress {
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
@@ -1421,7 +1425,7 @@ button:hover:not(.hamburger) {
         margin: 0 auto 20px auto;
     }
 
-    .footer_onlineAdress {
+    .footer_onlineAddress {
         margin: 0 auto 40px auto;
     }
 

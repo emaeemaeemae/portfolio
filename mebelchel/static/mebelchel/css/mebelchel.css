@@ -1,3 +1,4 @@
+/*noinspection ALL*/
 @font-face {
     font-family: "ubuntubold";
     src: url("../../../static/index/fonts/ubuntubold.woff") format("woff"),
@@ -7,6 +8,7 @@
     font-style: normal;
 }
 
+/*noinspection ALL*/
 @font-face {
     font-family: "ubuntumedium";
     src: url("../../../static/index/fonts/ubuntumedium.woff") format("woff"),
@@ -16,6 +18,7 @@
     font-style: normal;
 }
 
+/*noinspection ALL*/
 @font-face {
     font-family: "ubunturegular";
     src: url("../../../static/index/fonts/ubunturegular.woff") format("woff"),
