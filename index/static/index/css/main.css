@@ -124,7 +124,6 @@ button:focus {
 }
 
 .primary_image-user {
-    background-color: #f6f6f6;
     text-align: center;
     line-height: 0;
 }
@@ -476,7 +475,6 @@ button:focus {
 .alert.alert-success {
     width: 90%;
     text-align: center;
-    display: none;
     padding: 0;
     margin: 0;
     font-size: 44px;

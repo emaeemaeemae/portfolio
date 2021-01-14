@@ -26,45 +26,11 @@ for (let menuLink of menuLinks) {
     
 }
 
-
-// Мигающая рамка
-// setInterval(function() {
-//     if (document.querySelector('.portfolio_item-img').style.boxShadow == 'rgba(130, 130, 130, 0.75) 0px 0px 4px') {
-//         document.querySelector('.portfolio_item-img').style.boxShadow = 'rgba(0, 0, 0, 0.75) 0px 0px 4px';
-//     } else {
-//         document.querySelector('.portfolio_item-img').style.boxShadow = 'rgba(130, 130, 130, 0.75) 0px 0px 4px'
-//     }
-//   }, 2000);
-
-
-
-// Первый слайдер
-$('#vk_group_parser-slider').slick({
-    centerMode: true,
-    centerPadding: '0px',
-    slidesToShow: 3,
-    // dots: true,
-    speed: 1200,
-
-    prevArrow: $('#prev_arrow-vk_parser'),
-    nextArrow: $('#next_arrow-vk_parser')
-    // responsive: [
-    //   {
-    //     breakpoint: 768,
-    //     settings: {
-    //       arrows: false,
-    //       centerMode: true,
-    //       centerPadding: '40px',
-    //       slidesToShow: 3
-    //     }
-    //   }
-    // ]
-  });
-
-  // Модальное окно
+// Модальное окно
 
 let writeButton = document.querySelector('.button-write'); // кнопка написать
 let modalWindow = document.querySelector('.modal');
+let modalForm = $('.modal_form');
 let closeButtons = document.querySelectorAll('.modal_close');
 
 modalWindow.addEventListener('click', () => {
@@ -75,32 +41,30 @@ for (let closeButton of closeButtons) {
     closeButton.addEventListener('click', () => {
         modalWindow.classList.remove('modal--active');  // закрытие модального окна при клике на X
     })
-
-    $(".modal_form").click(function (event) { // приостанавливает закрытие модального окна при кликах на форму
-        event.stopPropagation();
-    });
 }
 
-writeButton.addEventListener('click', (clickButton) => {
+modalForm.click(function (event) { // приостанавливает закрытие модального окна при кликах на форму
+    event.stopPropagation();
+});
+
+
+writeButton.addEventListener('click', () => {
     $('.success').removeClass('success_active');
-    $('.modal_form').removeClass('modal_hidden');
+    modalForm.removeClass('modal_hidden');
     modalWindow.classList.add('modal--active');
     document.querySelector('.modal_name-input-input').focus();
 })
 
-$('.modal_form').submit(function(event) {
+modalForm.submit(function(event) {
     event.preventDefault();
     $.ajax({
         url: '/',
         type: 'POST',
-        dataType: 'json',
-        data: $('.modal_form').serialize(),
-        success: function (data) {
-            $('.alert.alert-success').addClass('active');
-            $('.modal_title').css('margin-top', '50px');
-            $('.success').addClass('success_active');
-            $('.modal_form').addClass('modal_hidden');
-            $('.modal_form')[0].reset();
+        data: modalForm.serialize(),
+        success: function () {
+            $('.success').addClass('success_active'); // вывод сообщения об отправке
+            modalForm.addClass('modal_hidden'); // скрытие формы
+            modalForm[0].reset();
         }
     });
 });

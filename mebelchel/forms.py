@@ -33,10 +33,12 @@ class MebelchelOrdersForm2(ModelForm):
         widgets = {
             'name': TextInput(attrs={
                 'id': 'order_name-input-input',
+                'class': 'order_name-input-input',
                 'placeholder': 'Александр'
             }),
             'phone': TextInput(attrs={
                 'id': 'order_phone-input-input',
+                'class': 'order_phone-input-input',
                 'placeholder': '+7-912-123-45-67'
             })
         }

@@ -76,9 +76,8 @@ for (let orderButton of orderButtons) {
         modalWindow.classList.add('modal--active');
         // поиск названия выбранной шаурмы через родительскую карточку
         let item = clickButton.target.closest('.catalog_item'); // карточка шаурмы 
-        let name = item.querySelector('.catalog_item-name'); // название
-        name.setAttribute('style', 'text-transform: capitalize');
-        orderType.value = name.innerText;
+        let name = item.querySelector('.catalog_item-name').innerHTML.toString(); // название
+        orderType.value = name.trim();
         document.querySelector('.modal_name-input-input').focus();
         // $(orderType).val(name.innerText);
     })

@@ -164,7 +164,7 @@
                         Имя
                     </label>
                     <div class="order_name-input">
-                        {{ form.name }}
+                        {{ form2.name }}
 <!--                        <input id="order_name-input-input" type="text" >-->
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                         Телефон
                     </label>
                     <div class="order_phone-input">
-                        {{ form.phone }}
+                        {{ form2.phone }}
 <!--                        <input id="order_phone-input-input" type="text" >-->
                     </div>
                 </div>
@@ -314,10 +314,6 @@
                                     Благодарю сотрудников за мою новую кухню. Дизайнер-консультант помогла 
                                     с выбором материалов, цветов и самой фурнитуры. Установщик быстро 
                                     и качественно установил кухню, дал подробную консультацию по эксплуатации.
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, facilis!
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae quam nobis quo,
-                                    eveniet odit impedit atque suscipit iure nam architecto tempora ex perferendis 
-                                    nemo blanditiis id fuga ipsum eum aspernatur.
                                 </span>  
                             </div>
                             <div class="read_more">
@@ -367,11 +363,11 @@
                 <a href="https://instagram.com" class="footer_inst-logo"></a>           
             </div>
             <div class="footer_contacts">
-                <p class="footer_offlineAdress">
+                <p class="footer_offlineAddress">
                     <nobr>8 (999) 444-33-22</nobr><br />
                         г.&nbsp;Челябинск, ул.&nbsp;Ленина, д.66
                 </p>
-                <p class="footer_onlineAdress">
+                <p class="footer_onlineAddress">
                     mebelchel@yandex.ru
                 </p>
             </div>
@@ -379,6 +375,13 @@
     </footer>
 
     <div class="modal">
+        <div class="success">
+            <button class="modal_close" type="button">
+            </button>
+            <div class="alert alert-success">
+                    Заявка успешно отправлена!
+            </div>
+        </div>
         <form method="post" class="modal_form">
             {% csrf_token %}
             <button class="modal_close" type="button">
