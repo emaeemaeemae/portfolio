@@ -153,7 +153,7 @@
         <div class="container portfolio_container">
             <h2 class="title">Портфолио</h2>
             <div class="portfolio_item">
-                <a href="{% url 'shawarma' %}" class="portfolio_shawarma">
+                <a href="{% url 'shawarma' %}" class="portfolio_link">
                     <img src="{% static 'index/img/portfolio_shawarma.png' %}" alt="Сайт с шаурмой" class="portfolio_item-img">
                 </a>
                 <p class="portfolio_item-label">
@@ -162,11 +162,20 @@
                 </p>
             </div>
             <div class="portfolio_item">
-                <a href="{% url 'mebelchel' %}" class="portfolio_shawarma">
-                    <img src="{% static 'index/img/portfolio_mebelchel.png' %}" alt="Сайт с шаурмой" class="portfolio_item-img">
+                <a href="{% url 'mebelchel' %}" class="portfolio_link">
+                    <img src="{% static 'index/img/portfolio_mebelchel.png' %}" alt="Сайт мебельного магазина" class="portfolio_item-img">
                 </a>
                 <p class="portfolio_item-label">
                     Сайт мебельного магазина<br>
+                    <span class="portfolio_item-click">(для просмотра нажмите на картинку)</span>
+                </p>
+            </div>
+            <div class="portfolio_item">
+                <a href="{% url 'notes_main' %}" class="portfolio_link">
+                    <img src="{% static 'index/img/portfolio_zametochki.png' %}" alt="Сайт для заметок" class="portfolio_item-img">
+                </a>
+                <p class="portfolio_item-label">
+                    Сайт для создания заметок<br>
                     <span class="portfolio_item-click">(для просмотра нажмите на картинку)</span>
                 </p>
             </div>

@@ -1,0 +1,16 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} Новая заметка {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <h1>Обновление заметки № {{ note.note_id }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.note }}<br>
+            <button class="btn btn-success" type="submit">Обновить заметку</button>
+            <span>{{ error }}</span>
+        </form>
+    </div>
+{% endblock %}

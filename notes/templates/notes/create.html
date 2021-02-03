@@ -1,0 +1,24 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} Новая заметка {% endblock %}
+
+{% block content%}
+    <div class="features">
+        {% if request.user.is_authenticated %}
+            <h1>Новая заметка</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.title }}<br>
+                {{ form.note }}<br>
+                <button class="btn btn-success" type="submit">Добавить заметку</button>
+                <span>{{ error }}</span>
+            </form>
+        {% else %}
+            <h1 class="mt-5">Для начала работы авторизируйтесь <br>
+            либо зарегистрируйстесь</h1>
+            <a href="{% url 'login' %}" class="btn btn-info mt-5">АВТОРИЗИРОВАТЬСЯ</a> <br>
+            <a href="{% url 'register' %}" class="btn btn-info mt-5">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+        {% endif %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} Авторизация {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <form name="login-form" class="login-form" action="" method="post">
+            {% csrf_token %}
+            <div class="form_header">
+                <h2>Авторизация</h2>
+                <span>Введите ваши регистрационные данные для входа в ваш личный кабинет. </span>
+            </div>
+
+            <div class="content">
+{#                {{ form.errors }}#}
+                {{ form.username }} <br>
+                <!--suppress HtmlFormInputWithoutLabel -->
+{#                <input name="username" type="text" class="input username" value="Логин" onfocus="this.value=''" />#}
+                {{ form.password }}
+                <!--suppress HtmlFormInputWithoutLabel -->
+{#                <input name="password" type="password" class="input password" value="Пароль" onfocus="this.value=''" />#}
+            </div>
+
+            <div class="form_footer">
+                <input type="submit" name="submit" value="ВОЙТИ" class="button" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

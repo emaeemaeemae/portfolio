@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'index',
     'shawarma',
     'mebelchel',
+    'notes',
+    'notes_main',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

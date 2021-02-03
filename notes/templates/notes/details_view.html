@@ -1,0 +1,19 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} {{ note.title}} {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <div class="alert-warning">
+            <h1>{{ note.title}}</h1>
+            <p>{{ note.date }}</p>
+            <p>{{ note.note }}</p>
+            <p>Заметка создана {{ note.datetime|date:'d-m-Y' }} в {{ note.datetime|date:'H:m' }}</p>
+            <a href="{% url 'note-update' note.note_id %}" class="btn btn-primary">Обновить заметку</a>
+            <a href="{% url 'note-delete' note.note_id %}" class="btn btn-danger">Удалить заметку</a>
+            <br><br>
+            <a href="{% url 'notes_home' %}" class="btn btn-warning">К заметкам</a>
+            <br><br>
+        </div>
+    </div>
+{% endblock %}

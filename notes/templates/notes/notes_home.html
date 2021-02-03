@@ -1,0 +1,22 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} Мои заметки {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <h1>Страница для заметок</h1>
+        {% if notes %}
+            {%  for note in notes %}
+                <div class="alert alert-warning">
+                    <h5>Заметка № {{ note.note_id }}</h5>
+                    <h3>{{ note.title }}</h3>
+                    <p>{{ note.note }}</p>
+                    <a href="{% url 'note-detail' note.note_id %}" class="btn btn-warning">Читать подробнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас еще нет заметок</p> <br>
+{#            <a href="{% url 'create' %}"><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить заметку</button></a>#}
+        {% endif %}
+    </div>
+{% endblock %}

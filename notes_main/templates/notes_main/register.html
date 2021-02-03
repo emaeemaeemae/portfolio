@@ -1,0 +1,28 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} Регистрация {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <form name="login-form" class="login-form" action="" method="post">
+            {% csrf_token %}
+            <div class="form_header">
+                <h2>Регистрация</h2>
+                <span>Введите ваши данные для регистрации на сайте. </span>
+            </div>
+
+            <div class="content">
+                {{ form.username }} <br>
+                <!--suppress HtmlFormInputWithoutLabel -->
+{#                <input name="username" type="text" class="input username" value="Логин" onfocus="this.value=''" />#}
+                {{ form.password }}
+                <!--suppress HtmlFormInputWithoutLabel -->
+{#                <input name="password" type="password" class="input password" value="Пароль" onfocus="this.value=''" />#}
+            </div>
+
+            <div class="form_footer">
+                <input type="submit" name="submit" value="РЕГИСТРАЦИЯ" class="button" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

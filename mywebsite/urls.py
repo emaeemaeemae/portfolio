@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('shawarma/', include('shawarma.urls')),
     path('mebelchel/', include('mebelchel.urls')),
+    path('notes/', include('notes_main.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

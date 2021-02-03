@@ -1,0 +1,12 @@
+{% extends 'notes_main/layout.html' %}
+
+{% block title %} Главная страница {% endblock %}
+
+{% block content%}
+    <div class="features">
+        <h1>Приложение предназначено для сохранения Ваших заметок</h1> <br>
+        {% if not request.user.is_authenticated %}
+            <p>Для начала работы необходимо зарегистрироваться</p>
+        {% endif %}
+    </div>
+{% endblock %}
