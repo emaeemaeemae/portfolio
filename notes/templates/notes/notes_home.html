@@ -8,7 +8,7 @@
         {% if notes %}
             {%  for note in notes %}
                 <div class="alert alert-warning">
-                    <h5>Заметка № {{ note.note_id }}</h5>
+                    <h5>Заметка № {{ note.note_id }} пользователя {{ note.user }}</h5>
                     <h3>{{ note.title }}</h3>
                     <p>{{ note.note }}</p>
                     <a href="{% url 'note-detail' note.note_id %}" class="btn btn-warning">Читать подробнее</a>

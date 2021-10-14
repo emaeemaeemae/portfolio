@@ -13,7 +13,8 @@ class NotesListView(ListView):
         if self.request.user.is_anonymous:
             return None
 
-        return Notes.objects.filter(user=self.request.user).order_by('-datetime')
+        # return Notes.objects.filter(user=self.request.user).order_by('-datetime')
+        return Notes.objects.order_by('-datetime')
 
 
 class NoteDetailView(DetailView):
@@ -24,7 +25,8 @@ class NoteDetailView(DetailView):
     slug_url_kwarg = 'note_id_url'  # прописывается в urls
 
     def get_queryset(self):
-        return Notes.objects.filter(user=self.request.user)
+        # return Notes.objects.filter(user=self.request.user)  # для индивидуальной нумерации
+        return Notes.objects  # для сквозной нумерации
 
 
 class NoteUpdateView(UpdateView):
@@ -38,7 +40,8 @@ class NoteUpdateView(UpdateView):
     form_class = NotesForm
 
     def get_queryset(self):
-        return Notes.objects.filter(user=self.request.user)
+        # return Notes.objects.filter(user=self.request.user) # для индивидуальной нумерации
+        return Notes.objects  # для сквозной нумерации
 
 
 class NoteDeleteView(DeleteView):
@@ -48,10 +51,11 @@ class NoteDeleteView(DeleteView):
     slug_field = 'note_id'
     slug_url_kwarg = 'note_id_url'
 
-    success_url = '/notes/'
+    success_url = '/notes/list'
 
     def get_queryset(self):
-        return Notes.objects.filter(user=self.request.user)
+        # return Notes.objects.filter(user=self.request.user) # для индивидуальной нумерации
+        return Notes.objects  # для сквозной нумерации
 
 
 def create(request):

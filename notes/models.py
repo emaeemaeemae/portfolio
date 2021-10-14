@@ -13,7 +13,7 @@ class Notes(models.Model):
         return f'Заметка пользователя {self.user} № {self.note_id} : {self.title}'
 
     def get_absolute_url(self):
-        return f'/notes/{self.note_id}'
+        return f'/notes/list/{self.note_id}'
 
     class Meta:
         unique_together = ('user', 'note_id')
@@ -24,7 +24,7 @@ class Notes(models.Model):
         if not self.note_id:
             self.note_id = (
                                    self.__class__.objects.filter(
-                                       user=self.user
+                                       # user=self.user
                                    ).aggregate(
                                        models.Max('note_id')
                                    )['note_id__max'] or 0
